@@ -5,6 +5,9 @@
 }
 
 /* common */
+body{
+  font-family: 'Lato', sans-serif;
+}
 .container{
   max-width: 1200px;
   margin: auto;
@@ -33,10 +36,10 @@ header{
 .todos-container{
   background-color: #cccc;
   border-radius: 10px;
+  padding: 15px;
 }
 .todos-list{
   list-style: none;
-  padding: 15px;
 }
 .todos-list li{
   padding: 10px;

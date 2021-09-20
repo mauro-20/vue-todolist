@@ -25,15 +25,16 @@
         <img src="img/logo.png" alt="logo boolean">
       </div>
       <div class="search">
-        <input type="text" placeholder="Nuovo todo" v-model="newTodo">
+        <input type="text" placeholder="Nuovo todo" v-model="newTodo" @keydown.enter="addTodo">
         <button class="btn" @click="addTodo">Aggiungi</button>
       </div>
     </header>
     <main>
       <div class="todos-container">
-        <ul class="todos-list">
-          <li v-for="todo in todos">{{todo}}<i class="far fa-times-circle todo-delete"></i></li>
+        <ul class="todos-list" v-if="todos.length > 0">
+          <li v-for="(todo,index) in todos" :key="index" >{{todo}}<i class="far fa-times-circle todo-delete" @click="removeTodo(index)"></i></li>
         </ul>
+        <h2 v-else>Non ci sono todos</h2>
       </div>
     </main>
   </div>
