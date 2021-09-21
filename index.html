@@ -34,8 +34,9 @@
         <ul class="todos-list" v-if="todos.length > 0">
           <li v-for="(todo,index) in todos" :key="index" >
             <input type="checkbox" v-model="todo.checked">
-            <span class="todo-text" :class="todo.checked? 'done': ''" @click="todo.checked==true ? todo.checked=false : todo.checked=true">{{todo.text}}</span>
-            <i class="far fa-times-circle todo-delete" @click="removeTodo(index)"></i></li>
+            <span class="todo-text" :class="{done: todo.checked}" @click="todo.checked==true ? todo.checked=false : todo.checked=true">{{todo.text}}</span>
+            <i class="far fa-times-circle todo-delete" @click="removeTodo(index)"></i>
+          </li>
         </ul>
         <h2 v-else>Non ci sono todos</h2>
       </div>
